@@ -1,0 +1,2661 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EverAfter AI | Leave More Than Memories</title>
+
+<style>
+
+:root {
+
+  --cream: #faf7f2;
+
+  --white: #ffffff;
+
+  --dark: #20252d;
+
+  --gray: #68707c;
+
+  --light: #eee9e3;
+
+  --rose: #b86f77;
+
+  --rose-light: #f3dfe1;
+
+  --gold: #b99558;
+
+  --green: #557d68;
+
+  --shadow: 0 15px 45px rgba(32,37,45,.10);
+
+}
+
+* {
+
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+body {
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: var(--cream);
+
+  color: var(--dark);
+
+  line-height: 1.6;
+
+}
+
+button {
+
+  font: inherit;
+
+  cursor: pointer;
+
+}
+
+a {
+
+  text-decoration: none;
+
+  color: inherit;
+
+}
+
+.container {
+
+  width: min(1120px, 92%);
+
+  margin: auto;
+
+}
+
+/* NAVIGATION */
+
+nav {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+  background: rgba(250,247,242,.96);
+
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--light);
+
+}
+
+.nav-inner {
+
+  height: 76px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+}
+
+.logo {
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+
+}
+
+.logo span {
+
+  color: var(--rose);
+
+}
+
+.nav-links {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+}
+
+.nav-links a {
+
+  font-size: 14px;
+
+  color: var(--gray);
+
+}
+
+.nav-links a:hover {
+
+  color: var(--rose);
+
+}
+
+/* BUTTONS */
+
+.btn {
+
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 13px 21px;
+
+  font-weight: 700;
+
+  transition: .2s;
+
+}
+
+.btn-primary {
+
+  background: var(--rose);
+
+  color: white;
+
+}
+
+.btn-primary:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(184,111,119,.25);
+
+}
+
+.btn-dark {
+
+  background: var(--dark);
+
+  color: white;
+
+}
+
+.btn-outline {
+
+  background: white;
+
+  border: 1px solid var(--light);
+
+  color: var(--dark);
+
+}
+
+.btn-outline:hover {
+
+  border-color: var(--rose);
+
+  color: var(--rose);
+
+}
+
+/* HERO */
+
+.hero {
+
+  padding: 100px 0 85px;
+
+  text-align: center;
+
+}
+
+.badge {
+
+  display: inline-block;
+
+  background: var(--rose-light);
+
+  color: #8d4f58;
+
+  padding: 8px 15px;
+
+  border-radius: 30px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  margin-bottom: 25px;
+
+}
+
+.hero h1 {
+
+  font-size: clamp(44px, 7vw, 76px);
+
+  line-height: 1.02;
+
+  letter-spacing: -3px;
+
+  max-width: 900px;
+
+  margin: auto;
+
+}
+
+.hero h1 span {
+
+  color: var(--rose);
+
+}
+
+.hero p {
+
+  max-width: 700px;
+
+  margin: 25px auto;
+
+  color: var(--gray);
+
+  font-size: 19px;
+
+}
+
+.hero-buttons {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  margin-top: 30px;
+
+  flex-wrap: wrap;
+
+}
+
+/* SECTIONS */
+
+section {
+
+  padding: 85px 0;
+
+}
+
+.section-title {
+
+  text-align: center;
+
+  max-width: 720px;
+
+  margin: 0 auto 50px;
+
+}
+
+.section-title h2 {
+
+  font-size: 42px;
+
+  line-height: 1.1;
+
+  margin-bottom: 14px;
+
+}
+
+.section-title p {
+
+  color: var(--gray);
+
+}
+
+/* HOW IT WORKS */
+
+.grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 22px;
+
+}
+
+.card {
+
+  background: white;
+
+  border: 1px solid var(--light);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  box-shadow: var(--shadow);
+
+}
+
+.number {
+
+  width: 42px;
+
+  height: 42px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: var(--rose-light);
+
+  color: var(--rose);
+
+  font-weight: 800;
+
+  margin-bottom: 22px;
+
+}
+
+.card h3 {
+
+  margin-bottom: 10px;
+
+  font-size: 20px;
+
+}
+
+.card p {
+
+  color: var(--gray);
+
+}
+
+/* FEATURES */
+
+.features {
+
+  background: white;
+
+}
+
+.feature-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 20px;
+
+}
+
+.feature {
+
+  padding: 27px;
+
+  border: 1px solid var(--light);
+
+  border-radius: 18px;
+
+  background: var(--cream);
+
+}
+
+.feature-icon {
+
+  font-size: 30px;
+
+  margin-bottom: 10px;
+
+}
+
+.feature h3 {
+
+  margin-bottom: 8px;
+
+}
+
+.feature p {
+
+  color: var(--gray);
+
+}
+
+/* PRICING */
+
+.pricing-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 25px;
+
+  max-width: 900px;
+
+  margin: auto;
+
+}
+
+.price-card {
+
+  background: white;
+
+  border: 1px solid var(--light);
+
+  border-radius: 24px;
+
+  padding: 35px;
+
+  box-shadow: var(--shadow);
+
+  position: relative;
+
+}
+
+.price-card.featured {
+
+  border: 2px solid var(--rose);
+
+}
+
+.popular {
+
+  position: absolute;
+
+  top: -14px;
+
+  right: 25px;
+
+  background: var(--rose);
+
+  color: white;
+
+  padding: 6px 14px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+}
+
+.price {
+
+  font-size: 48px;
+
+  font-weight: 800;
+
+  margin: 15px 0 5px;
+
+}
+
+.price small {
+
+  font-size: 15px;
+
+  color: var(--gray);
+
+  font-weight: normal;
+
+}
+
+.price-description {
+
+  color: var(--gray);
+
+  margin-bottom: 25px;
+
+}
+
+.price-list {
+
+  list-style: none;
+
+  margin: 25px 0;
+
+}
+
+.price-list li {
+
+  margin: 12px 0;
+
+}
+
+.pay-options {
+
+  display: grid;
+
+  gap: 10px;
+
+}
+
+.pay-option {
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 15px;
+
+  border: 1px solid var(--light);
+
+  border-radius: 12px;
+
+  background: var(--cream);
+
+}
+
+.pay-option:hover {
+
+  border-color: var(--rose);
+
+}
+
+.pay-option strong {
+
+  color: var(--rose);
+
+}
+
+/* CTA */
+
+.cta {
+
+  background: var(--dark);
+
+  color: white;
+
+  text-align: center;
+
+}
+
+.cta h2 {
+
+  font-size: 44px;
+
+  max-width: 700px;
+
+  margin: auto;
+
+  line-height: 1.1;
+
+}
+
+.cta p {
+
+  max-width: 600px;
+
+  margin: 18px auto 30px;
+
+  color: #cbd0d6;
+
+}
+
+/* FOOTER */
+
+footer {
+
+  padding: 35px 0;
+
+  background: #181c22;
+
+  color: #aeb4bd;
+
+}
+
+.footer-inner {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+
+}
+
+.footer-logo {
+
+  color: white;
+
+  font-weight: bold;
+
+}
+
+/* MODALS */
+
+.modal {
+
+  display: none;
+
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(20,24,30,.68);
+
+  z-index: 500;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+}
+
+.modal.active {
+
+  display: flex;
+
+}
+
+.modal-box {
+
+  background: white;
+
+  width: min(520px,100%);
+
+  border-radius: 24px;
+
+  padding: 32px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+}
+
+.modal-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+
+}
+
+.close {
+
+  border: none;
+
+  background: none;
+
+  font-size: 28px;
+
+  color: var(--gray);
+
+}
+
+.form-group {
+
+  margin-bottom: 16px;
+
+}
+
+.form-group label {
+
+  display: block;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  margin-bottom: 6px;
+
+}
+
+.form-group input,
+
+.form-group select,
+
+.form-group textarea {
+
+  width: 100%;
+
+  border: 1px solid #d8d4cf;
+
+  border-radius: 10px;
+
+  padding: 13px;
+
+  font: inherit;
+
+}
+
+.form-group textarea {
+
+  min-height: 130px;
+
+  resize: vertical;
+
+}
+
+/* NOTICE */
+
+.notice {
+
+  background: #fff8e8;
+
+  border: 1px solid #ead7a5;
+
+  color: #735d27;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  margin: 20px 0;
+
+  font-size: 14px;
+
+}
+
+/* DASHBOARD */
+
+.dashboard {
+
+  display: none;
+
+  padding: 50px 0 90px;
+
+}
+
+.dashboard.active {
+
+  display: block;
+
+}
+
+.dashboard-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  align-items: center;
+
+  margin-bottom: 35px;
+
+  flex-wrap: wrap;
+
+}
+
+.dashboard-header h1 {
+
+  font-size: 36px;
+
+}
+
+.dashboard-header p {
+
+  color: var(--gray);
+
+}
+
+.dashboard-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 18px;
+
+}
+
+.dash-card {
+
+  background: white;
+
+  padding: 25px;
+
+  border: 1px solid var(--light);
+
+  border-radius: 18px;
+
+  min-height: 190px;
+
+}
+
+.dash-card .icon {
+
+  font-size: 30px;
+
+  margin-bottom: 15px;
+
+}
+
+.dash-card h3 {
+
+  margin-bottom: 7px;
+
+}
+
+.dash-card p {
+
+  color: var(--gray);
+
+  font-size: 14px;
+
+  margin-bottom: 15px;
+
+}
+
+.progress-wrap {
+
+  background: #eee;
+
+  border-radius: 20px;
+
+  height: 9px;
+
+  overflow: hidden;
+
+  margin-top: 10px;
+
+}
+
+.progress {
+
+  height: 100%;
+
+  width: 15%;
+
+  background: var(--rose);
+
+  transition: width .5s;
+
+}
+
+/* INTERVIEW */
+
+.interview {
+
+  display: none;
+
+  padding: 50px 0 100px;
+
+}
+
+.interview.active {
+
+  display: block;
+
+}
+
+.interview-box {
+
+  max-width: 760px;
+
+  margin: auto;
+
+}
+
+.interview-title {
+
+  text-align: center;
+
+  margin-bottom: 35px;
+
+}
+
+.ai-message {
+
+  background: var(--rose-light);
+
+  padding: 22px;
+
+  border-radius: 20px 20px 20px 5px;
+
+  margin-bottom: 18px;
+
+}
+
+.user-message {
+
+  background: var(--dark);
+
+  color: white;
+
+  padding: 22px;
+
+  border-radius: 20px 20px 5px 20px;
+
+  margin-bottom: 18px;
+
+  display: none;
+
+}
+
+/* MEMORY */
+
+.memory-list {
+
+  margin-top: 20px;
+
+}
+
+.memory {
+
+  padding: 15px;
+
+  border: 1px solid var(--light);
+
+  border-radius: 12px;
+
+  margin-bottom: 10px;
+
+  background: var(--cream);
+
+}
+
+/* MOBILE */
+
+@media(max-width:800px) {
+
+  .nav-links {
+
+    display: none;
+
+  }
+
+  .grid,
+
+  .feature-grid,
+
+  .pricing-grid,
+
+  .dashboard-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .hero {
+
+    padding: 65px 0;
+
+  }
+
+  .hero h1 {
+
+    letter-spacing: -2px;
+
+  }
+
+  .section-title h2 {
+
+    font-size: 34px;
+
+  }
+
+  .cta h2 {
+
+    font-size: 34px;
+
+  }
+
+  section {
+
+    padding: 65px 0;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ==============================
+
+     NAVIGATION
+
+================================ -->
+
+<nav id="mainNav">
+
+  <div class="container nav-inner">
+
+    <div class="logo">
+
+      EverAfter <span>AI</span>
+
+    </div>
+
+    <div class="nav-links">
+
+      <a href="#how">How It Works</a>
+
+      <a href="#features">Features</a>
+
+      <a href="#pricing">Pricing</a>
+
+      <button
+
+        class="btn btn-primary"
+
+        onclick="openSignup()">
+
+        Create My Legacy
+
+      </button>
+
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- ==============================
+
+     MAIN WEBSITE
+
+================================ -->
+
+<main id="mainSite">
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="badge">
+
+      Preserve your voice. Preserve your stories.
+
+    </div>
+
+    <h1>
+
+      Leave more than memories.
+
+      <span>Leave a conversation.</span>
+
+    </h1>
+
+    <p>
+
+      EverAfter AI helps you create a digital representation of yourself
+
+      while you're alive — built from your memories, stories, personality,
+
+      voice, photos and the way you communicate.
+
+    </p>
+
+    <div class="hero-buttons">
+
+      <button
+
+        class="btn btn-primary"
+
+        onclick="openSignup()">
+
+        Create My AI Legacy
+
+      </button>
+
+      <a
+
+        href="#how"
+
+        class="btn btn-outline">
+
+        See How It Works
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section id="how">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+
+        Build your legacy while you're here.
+
+      </h2>
+
+      <p>
+
+        The more EverAfter AI learns about you, the better it can
+
+        represent your memories, personality and way of communicating.
+
+      </p>
+
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <div class="number">1</div>
+
+        <h3>Create Your Account</h3>
+
+        <p>
+
+          Start your private EverAfter AI profile and choose who will
+
+          eventually be allowed to access your legacy.
+
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <div class="number">2</div>
+
+        <h3>Talk & Teach Your AI</h3>
+
+        <p>
+
+          Have guided conversations about your childhood, family,
+
+          relationships, experiences, humor, values and life story.
+
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <div class="number">3</div>
+
+        <h3>Preserve Your Legacy</h3>
+
+        <p>
+
+          Add photos, videos, recordings and memories so your loved ones
+
+          can have something more personal than a collection of files.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section id="features" class="features">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+
+        Your story becomes the foundation.
+
+      </h2>
+
+      <p>
+
+        EverAfter AI is designed to learn from the person who knows
+
+        themselves best — you.
+
+      </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature">
+
+        <div class="feature-icon">💬</div>
+
+        <h3>Guided Memory Interviews</h3>
+
+        <p>
+
+          Your AI asks questions and follows up so important memories
+
+          aren't forgotten.
+
+        </p>
+
+      </div>
+
+      <div class="feature">
+
+        <div class="feature-icon">❤️</div>
+
+        <h3>Personality & Response Style</h3>
+
+        <p>
+
+          Teach your AI your humor, expressions, favorite sayings,
+
+          values and communication style.
+
+        </p>
+
+      </div>
+
+      <div class="feature">
+
+        <div class="feature-icon">📸</div>
+
+        <h3>Photos, Video & Voice</h3>
+
+        <p>
+
+          Preserve the media that helps tell your story and gives your
+
+          family more ways to remember you.
+
+        </p>
+
+      </div>
+
+      <div class="feature">
+
+        <div class="feature-icon">👨‍👩‍👧</div>
+
+        <h3>Family Access</h3>
+
+        <p>
+
+          Choose the people who may eventually be allowed to interact
+
+          with your EverAfter legacy.
+
+        </p>
+
+      </div>
+
+      <div class="feature">
+
+        <div class="feature-icon">🧠</div>
+
+        <h3>Growing Memory</h3>
+
+        <p>
+
+          Continue teaching your AI throughout your life as new memories
+
+          and experiences happen.
+
+        </p>
+
+      </div>
+
+      <div class="feature">
+
+        <div class="feature-icon">🔐</div>
+
+        <h3>Privacy & Permission</h3>
+
+        <p>
+
+          You decide what is included, who can access it and what happens
+
+          to your legacy.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRICING -->
+
+<section id="pricing">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+
+        Choose how you want to preserve your story.
+
+      </h2>
+
+      <p>
+
+        Start small or keep building your EverAfter legacy over time.
+
+      </p>
+
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- MEMBERSHIP -->
+
+      <div class="price-card featured">
+
+        <div class="popular">
+
+          MOST POPULAR
+
+        </div>
+
+        <h3>Legacy Membership</h3>
+
+        <div class="price">
+
+          $29.95
+
+          <small>/ month</small>
+
+        </div>
+
+        <p class="price-description">
+
+          Best for people who want to continuously build and maintain
+
+          their AI legacy.
+
+        </p>
+
+        <ul class="price-list">
+
+          <li>✓ Ongoing AI conversations</li>
+
+          <li>✓ Guided memory interviews</li>
+
+          <li>✓ Personality development</li>
+
+          <li>✓ Memory storage</li>
+
+          <li>✓ Family access controls</li>
+
+          <li>✓ Continue adding memories</li>
+
+        </ul>
+
+        <button
+
+          class="btn btn-primary"
+
+          style="width:100%"
+
+          onclick="choosePlan('Legacy Membership - $29.95/month')">
+
+          Start Legacy Membership
+
+        </button>
+
+      </div>
+
+      <!-- PAY AS YOU GO -->
+
+      <div class="price-card">
+
+        <h3>Pay As You Go</h3>
+
+        <div class="price">
+
+          $10.99
+
+          <small>/ hour</small>
+
+        </div>
+
+        <p class="price-description">
+
+          Purchase conversation time whenever you want without
+
+          a monthly membership.
+
+        </p>
+
+        <div class="pay-options">
+
+          <button
+
+            class="pay-option"
+
+            onclick="choosePlan('1 Hour - $10.99')">
+
+            <span>1 Hour</span>
+
+            <strong>$10.99</strong>
+
+          </button>
+
+          <button
+
+            class="pay-option"
+
+            onclick="choosePlan('2 Hours - $21.98')">
+
+            <span>2 Hours</span>
+
+            <strong>$21.98</strong>
+
+          </button>
+
+          <button
+
+            class="pay-option"
+
+            onclick="choosePlan('3 Hours - $32.97')">
+
+            <span>3 Hours</span>
+
+            <strong>$32.97</strong>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+  <div class="container">
+
+    <h2>
+
+      What if your family could still ask you questions?
+
+    </h2>
+
+    <p>
+
+      Start building your EverAfter AI legacy today.
+
+    </p>
+
+    <button
+
+      class="btn btn-primary"
+
+      onclick="openSignup()">
+
+      Create My Legacy
+
+    </button>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- ==============================
+
+     DASHBOARD
+
+================================ -->
+
+<section
+
+  id="dashboard"
+
+  class="dashboard">
+
+  <div class="container">
+
+    <div class="dashboard-header">
+
+      <div>
+
+        <h1>
+
+          Welcome,
+
+          <span id="userName">Friend</span>.
+
+        </h1>
+
+        <p>
+
+          Your EverAfter legacy is just beginning.
+
+        </p>
+
+      </div>
+
+      <button
+
+        class="btn btn-outline"
+
+        onclick="showMainSite()">
+
+        View Website
+
+      </button>
+
+    </div>
+
+    <div class="notice">
+
+      <strong>Prototype:</strong>
+
+      This demonstration stores information locally in your browser.
+
+      AI, payments, secure cloud storage and authentication are not
+
+      connected yet.
+
+    </div>
+
+    <!-- PROGRESS -->
+
+    <div
+
+      class="card"
+
+      style="margin-bottom:25px">
+
+      <h3>
+
+        Legacy Progress
+
+      </h3>
+
+      <p style="color:var(--gray)">
+
+        Keep teaching your AI about your life.
+
+      </p>
+
+      <div class="progress-wrap">
+
+        <div
+
+          class="progress"
+
+          id="progressBar">
+
+        </div>
+
+      </div>
+
+      <p
+
+        style="margin-top:8px;color:var(--gray);font-size:13px">
+
+        <span id="progressText">15%</span>
+
+        of your starter profile completed
+
+      </p>
+
+    </div>
+
+    <!-- DASHBOARD CARDS -->
+
+    <div class="dashboard-grid">
+
+      <div class="dash-card">
+
+        <div class="icon">💬</div>
+
+        <h3>Teach My AI</h3>
+
+        <p>
+
+          Answer guided questions about your life and experiences.
+
+        </p>
+
+        <button
+
+          class="btn btn-primary"
+
+          onclick="openInterview()">
+
+          Start Interview
+
+        </button>
+
+      </div>
+
+      <div class="dash-card">
+
+        <div class="icon">🧠</div>
+
+        <h3>Memory Vault</h3>
+
+        <p>
+
+          View memories you've already added.
+
+        </p>
+
+        <button
+
+          class="btn btn-outline"
+
+          onclick="showMemories()">
+
+          View Memories
+
+        </button>
+
+      </div>
+
+      <div class="dash-card">
+
+        <div class="icon">✨</div>
+
+        <h3>Personality</h3>
+
+        <p>
+
+          Define how your AI should communicate.
+
+        </p>
+
+        <button
+
+          class="btn btn-outline"
+
+          onclick="openPersonality()">
+
+          Customize
+
+        </button>
+
+      </div>
+
+      <div class="dash-card">
+
+        <div class="icon">📸</div>
+
+        <h3>Photos & Media</h3>
+
+        <p>
+
+          Add photos, videos and voice recordings.
+
+        </p>
+
+        <button
+
+          class="btn btn-outline"
+
+          onclick="mediaMessage()">
+
+          Add Media
+
+        </button>
+
+      </div>
+
+      <div class="dash-card">
+
+        <div class="icon">👨‍👩‍👧</div>
+
+        <h3>Family Access</h3>
+
+        <p>
+
+          Choose who may eventually access your legacy.
+
+        </p>
+
+        <button
+
+          class="btn btn-outline"
+
+          onclick="familyAccess()">
+
+          Manage Access
+
+        </button>
+
+      </div>
+
+      <div class="dash-card">
+
+        <div class="icon">💳</div>
+
+        <h3>Membership</h3>
+
+        <p>
+
+          Manage your EverAfter plan.
+
+        </p>
+
+        <button
+
+          class="btn btn-outline"
+
+          onclick="showPricing()">
+
+          View Plans
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==============================
+
+     INTERVIEW
+
+================================ -->
+
+<section
+
+  id="interview"
+
+  class="interview">
+
+  <div class="container">
+
+    <div class="interview-box">
+
+      <div class="interview-title">
+
+        <h1>
+
+          Teach Me About You
+
+        </h1>
+
+        <p style="color:var(--gray)">
+
+          This is where EverAfter AI begins learning your story.
+
+        </p>
+
+      </div>
+
+      <div
+
+        class="ai-message"
+
+        id="aiQuestion">
+
+        <strong>
+
+          EverAfter AI
+
+        </strong>
+
+        <p style="margin-top:8px">
+
+          Tell me about your childhood.
+
+          What is one memory from growing up that you never
+
+          want your family to forget?
+
+        </p>
+
+      </div>
+
+      <div
+
+        class="user-message"
+
+        id="userAnswer">
+
+      </div>
+
+      <div class="form-group">
+
+        <textarea
+
+          id="memoryInput"
+
+          placeholder="Tell me your story...">
+
+        </textarea>
+
+      </div>
+
+      <button
+
+        class="btn btn-primary"
+
+        onclick="sendMemory()">
+
+        Save Memory & Continue
+
+      </button>
+
+      <button
+
+        class="btn btn-outline"
+
+        onclick="showDashboard()"
+
+        style="margin-left:8px">
+
+        Finish Later
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==============================
+
+     SIGNUP MODAL
+
+================================ -->
+
+<div
+
+  class="modal"
+
+  id="signupModal">
+
+  <div class="modal-box">
+
+    <div class="modal-header">
+
+      <div>
+
+        <h2>
+
+          Create Your Legacy
+
+        </h2>
+
+        <p style="color:var(--gray)">
+
+          Start building your EverAfter AI.
+
+        </p>
+
+      </div>
+
+      <button
+
+        class="close"
+
+        onclick="closeSignup()">
+
+        ×
+
+      </button>
+
+    </div>
+
+    <div class="form-group">
+
+      <label>
+
+        Your Name
+
+      </label>
+
+      <input
+
+        id="signupName"
+
+        type="text"
+
+        placeholder="Your full name">
+
+    </div>
+
+    <div class="form-group">
+
+      <label>
+
+        Email Address
+
+      </label>
+
+      <input
+
+        id="signupEmail"
+
+        type="email"
+
+        placeholder="you@example.com">
+
+    </div>
+
+    <div class="form-group">
+
+      <label>
+
+        Password
+
+      </label>
+
+      <input
+
+        id="signupPassword"
+
+        type="password"
+
+        placeholder="Create a password">
+
+    </div>
+
+    <div class="form-group">
+
+      <label>
+
+        What brings you to EverAfter AI?
+
+      </label>
+
+      <select id="signupPurpose">
+
+        <option>
+
+          Preserve my own legacy
+
+        </option>
+
+        <option>
+
+          Preserve a family member's legacy
+
+        </option>
+
+        <option>
+
+          Learn more about EverAfter AI
+
+        </option>
+
+      </select>
+
+    </div>
+
+    <div class="notice">
+
+      EverAfter AI creates a representation based on information
+
+      a person chooses to provide.
+
+      It is not literally the deceased person.
+
+    </div>
+
+    <button
+
+      class="btn btn-primary"
+
+      style="width:100%"
+
+      onclick="createAccount()">
+
+      Create My Account
+
+    </button>
+
+  </div>
+
+</div>
+
+<!-- ==============================
+
+     MEMORY MODAL
+
+================================ -->
+
+<div
+
+  class="modal"
+
+  id="memoryModal">
+
+  <div class="modal-box">
+
+    <div class="modal-header">
+
+      <h2>
+
+        Memory Vault
+
+      </h2>
+
+      <button
+
+        class="close"
+
+        onclick="closeMemory()">
+
+        ×
+
+      </button>
+
+    </div>
+
+    <div id="memoryList"></div>
+
+  </div>
+
+</div>
+
+<!-- ==============================
+
+     PERSONALITY MODAL
+
+================================ -->
+
+<div
+
+  class="modal"
+
+  id="personalityModal">
+
+  <div class="modal-box">
+
+    <div class="modal-header">
+
+      <h2>
+
+        Your Personality
+
+      </h2>
+
+      <button
+
+        class="close"
+
+        onclick="closePersonality()">
+
+        ×
+
+      </button>
+
+    </div>
+
+    <div class="form-group">
+
+      <label>
+
+        How should your AI communicate?
+
+      </label>
+
+      <select id="personalityStyle">
+
+        <option>
+
+          Warm and loving
+
+        </option>
+
+        <option>
+
+          Funny and playful
+
+        </option>
+
+        <option>
+
+          Direct and honest
+
+        </option>
+
+        <option>
+
+          Calm and thoughtful
+
+        </option>
+
+        <option>
+
+          Like I normally speak
+
+        </option>
+
+      </select>
+
+    </div>
+
+    <div class="form-group">
+
+      <label>
+
+        Favorite saying or phrase
+
+      </label>
+
+      <input
+
+        id="favoritePhrase"
+
+        placeholder="Example: Everything happens for a reason.">
+
+    </div>
+
+    <button
+
+      class="btn btn-primary"
+
+      onclick="savePersonality()">
+
+      Save Personality
+
+    </button>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div class="footer-logo">
+
+      EverAfter AI
+
+    </div>
+
+    <div>
+
+      © 2026 EverAfter AI · Prototype
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ==============================
+
+     JAVASCRIPT
+
+================================ -->
+
+<script>
+
+/* USER DATA */
+
+let memories =
+
+  JSON.parse(
+
+    localStorage.getItem("everafter_memories")
+
+  ) || [];
+
+let user =
+
+  JSON.parse(
+
+    localStorage.getItem("everafter_user")
+
+  ) || null;
+
+/* SIGNUP */
+
+function openSignup() {
+
+  document
+
+    .getElementById("signupModal")
+
+    .classList.add("active");
+
+}
+
+function closeSignup() {
+
+  document
+
+    .getElementById("signupModal")
+
+    .classList.remove("active");
+
+}
+
+/* CREATE ACCOUNT */
+
+function createAccount() {
+
+  const name =
+
+    document
+
+      .getElementById("signupName")
+
+      .value
+
+      .trim();
+
+  const email =
+
+    document
+
+      .getElementById("signupEmail")
+
+      .value
+
+      .trim();
+
+  const password =
+
+    document
+
+      .getElementById("signupPassword")
+
+      .value
+
+      .trim();
+
+  const purpose =
+
+    document
+
+      .getElementById("signupPurpose")
+
+      .value;
+
+  if (!name || !email || !password) {
+
+    alert(
+
+      "Please complete all required fields."
+
+    );
+
+    return;
+
+  }
+
+  user = {
+
+    name: name,
+
+    email: email,
+
+    purpose: purpose,
+
+    created:
+
+      new Date().toISOString()
+
+  };
+
+  localStorage.setItem(
+
+    "everafter_user",
+
+    JSON.stringify(user)
+
+  );
+
+  closeSignup();
+
+  showDashboard();
+
+}
+
+/* DASHBOARD */
+
+function showDashboard() {
+
+  document
+
+    .getElementById("mainSite")
+
+    .style.display = "none";
+
+  document
+
+    .getElementById("dashboard")
+
+    .classList.add("active");
+
+  document
+
+    .getElementById("interview")
+
+    .classList.remove("active");
+
+  document
+
+    .getElementById("mainNav")
+
+    .style.display = "none";
+
+  if (user) {
+
+    document
+
+      .getElementById("userName")
+
+      .textContent = user.name;
+
+  }
+
+  updateProgress();
+
+  window.scrollTo(0,0);
+
+}
+
+/* WEBSITE */
+
+function showMainSite() {
+
+  document
+
+    .getElementById("mainSite")
+
+    .style.display = "block";
+
+  document
+
+    .getElementById("dashboard")
+
+    .classList.remove("active");
+
+  document
+
+    .getElementById("interview")
+
+    .classList.remove("active");
+
+  document
+
+    .getElementById("mainNav")
+
+    .style.display = "block";
+
+  window.scrollTo(0,0);
+
+}
+
+/* INTERVIEW */
+
+function openInterview() {
+
+  document
+
+    .getElementById("dashboard")
+
+    .classList.remove("active");
+
+  document
+
+    .getElementById("mainSite")
+
+    .style.display = "none";
+
+  document
+
+    .getElementById("mainNav")
+
+    .style.display = "none";
+
+  document
+
+    .getElementById("interview")
+
+    .classList.add("active");
+
+  window.scrollTo(0,0);
+
+}
+
+function sendMemory() {
+
+  const input =
+
+    document
+
+      .getElementById("memoryInput");
+
+  const text =
+
+    input.value.trim();
+
+  if (!text) {
+
+    alert(
+
+      "Tell me a little about the memory first."
+
+    );
+
+    return;
+
+  }
+
+  memories.push({
+
+    text: text,
+
+    date:
+
+      new Date().toLocaleDateString()
+
+  });
+
+  localStorage.setItem(
+
+    "everafter_memories",
+
+    JSON.stringify(memories)
+
+  );
+
+  const answer =
+
+    document.getElementById("userAnswer");
+
+  answer.textContent = text;
+
+  answer.style.display = "block";
+
+  document
+
+    .getElementById("aiQuestion")
+
+    .innerHTML = `
+
+      <strong>EverAfter AI</strong>
+
+      <p style="margin-top:8px">
+
+        I want to remember that.
+
+        Can you tell me a little more about what made
+
+        that moment special to you?
+
+      </p>
+
+    `;
+
+  input.value = "";
+
+  updateProgress();
+
+}
+
+/* PROGRESS */
+
+function updateProgress() {
+
+  let progress = 15;
+
+  if (memories.length > 0) {
+
+    progress = 35;
+
+  }
+
+  if (memories.length > 2) {
+
+    progress = 55;
+
+  }
+
+  if (memories.length > 5) {
+
+    progress = 75;
+
+  }
+
+  if (memories.length > 10) {
+
+    progress = 90;
+
+  }
+
+  document
+
+    .getElementById("progressBar")
+
+    .style.width = progress + "%";
+
+  document
+
+    .getElementById("progressText")
+
+    .textContent = progress + "%";
+
+}
+
+/* MEMORY VAULT */
+
+function showMemories() {
+
+  const list =
+
+    document.getElementById("memoryList");
+
+  if (memories.length === 0) {
+
+    list.innerHTML = `
+
+      <p style="color:var(--gray)">
+
+        You haven't saved any memories yet.
+
+      </p>
+
+    `;
+
+  }
+
+  else {
+
+    list.innerHTML =
+
+      memories.map(
+
+        (memory,index) => `
+
+          <div class="memory">
+
+            <strong>
+
+              Memory ${index + 1}
+
+            </strong>
+
+            <p style="margin-top:6px">
+
+              ${escapeHTML(memory.text)}
+
+            </p>
+
+            <small style="color:var(--gray)">
+
+              Added ${memory.date}
+
+            </small>
+
+          </div>
+
+        `
+
+      ).join("");
+
+  }
+
+  document
+
+    .getElementById("memoryModal")
+
+    .classList.add("active");
+
+}
+
+function closeMemory() {
+
+  document
+
+    .getElementById("memoryModal")
+
+    .classList.remove("active");
+
+}
+
+/* PERSONALITY
